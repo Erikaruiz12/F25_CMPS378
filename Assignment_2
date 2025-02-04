@@ -1,0 +1,46 @@
+#!/bin/bash
+
+regular_price=5
+midgrade_price=7
+premium_price=9
+diesel_price=10
+
+echo "------------------------Welcome to Gas for Taxes------------------------"
+echo "|             Gas Type                |                 Price          |"
+echo "------------------------------------------------------------------------"
+echo "|             Regular                 |             $regular_price     |"
+echo "------------------------------------------------------------------------"
+echo "|             Midgrade                 |            $midgrade_price    |"
+echo "------------------------------------------------------------------------"
+echo "|             Premium                 |             $premium_price     |"
+echo "------------------------------------------------------------------------"
+echo "|             Diesel                 |              $diesel_price      |"
+echo "------------------------------------------------------------------------"
+echo "Choose a gas type to fill up your car:"
+read -r fuel_type
+
+echo "How many gallons:" 
+read -r amount
+fuel_type=$(echo "$fuel_type" | tr '[:upper:]' '[:lower:]')
+case $fuel_type in
+regular)
+cost=$(( "$amount * $regular_price"))
+;;
+midgrade)
+cost=$(( "$amount * $midgrade_price"))
+;;
+premium)
+cost=$(("$amount * $premium_price"))
+;;
+diesel)
+cost=$(("$amount * $diesel_price"))
+;;
+*)
+echo "Invalid Option!Please pick from list provided."
+exit 1
+;;
+esac
+echo "How would you like to pay? Debit, Credit, Cash, Gift Card"
+read -r payment_type
+echo "Great! You pay your balance of ${cost} dollars using ${payment_type}"
+echo "Thank you for filling up gas at Gas 4 Taxes, a place to get broke!"
