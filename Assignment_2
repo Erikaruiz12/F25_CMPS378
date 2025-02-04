@@ -1,10 +1,10 @@
 #!/bin/bash
-
+#SetVariables
 regular_price=5
 midgrade_price=7
 premium_price=9
 diesel_price=10
-
+#Display message
 echo "------------------------Welcome to Gas for Taxes------------------------"
 echo "|             Gas Type                |                 Price          |"
 echo "------------------------------------------------------------------------"
@@ -16,12 +16,15 @@ echo "|             Premium                 |             $premium_price     |"
 echo "------------------------------------------------------------------------"
 echo "|             Diesel                 |              $diesel_price      |"
 echo "------------------------------------------------------------------------"
+#Ask Customer to choose their gas type
 echo "Choose a gas type to fill up your car:"
 read -r fuel_type
-
+#Ask Customer to choose amount of gallons
 echo "How many gallons:" 
 read -r amount
+#Set to prevent spelling issues
 fuel_type=$(echo "$fuel_type" | tr '[:upper:]' '[:lower:]')
+#Calculations
 case $fuel_type in
 regular)
 cost=$(( "$amount * $regular_price"))
@@ -36,11 +39,15 @@ diesel)
 cost=$(("$amount * $diesel_price"))
 ;;
 *)
+#Prompts user to try again if select incorrect
 echo "Invalid Option!Please pick from list provided."
 exit 1
 ;;
+#Leaves the case
 esac
+#Prompts users to provide their form of payment
 echo "How would you like to pay? Debit, Credit, Cash, Gift Card"
 read -r payment_type
+#Prompts the users total and ending message
 echo "Great! You pay your balance of ${cost} dollars using ${payment_type}"
 echo "Thank you for filling up gas at Gas 4 Taxes, a place to get broke!"
