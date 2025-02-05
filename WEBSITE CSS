@@ -1,0 +1,115 @@
+* { box-sizing: border-box; }
+
+body { background-color: #d1f9f4;
+       color: #40407A;
+       font-family: Arial, Verdana, sans-serif;
+       margin: 0;  
+}
+
+header { background-color: #40407A; 
+         background-image: url(images/p2.jpg); 
+         background-size: 100% 100%;
+         color: #FFFFFF;
+         font-size: 90%; 
+         margin-top: 50px; 
+         min-height: 200px;
+} 
+nav { width: 100%;
+      padding-top: 0.5em; 
+      padding: 1em;
+      padding-right: 0;
+      position: fixed; top: 0; left: 0;
+      text-align: right;
+      background-color: #FFFFFF;
+      margin: 0;
+      z-index: 9999; 
+} 
+
+nav a { text-decoration: none;
+        display: block;
+}
+
+nav a:link { color: #3F2860; }
+nav a:visited { color: #497777; }
+nav a:hover { color: #A26100; }
+
+nav ul { display: flex;
+         flex-flow: row wrap;
+         list-style-type: none;
+         margin: 0; font-size: 1.2em;
+}
+nav li { display: inline;
+         width: 40%;
+         padding-top: 0; padding-bottom: 0;
+         padding-right: 1em; padding-left: 1em;
+}
+
+.studio { font-style: italic; }
+
+footer { font-size: .60em; 
+         font-style: italic; 
+         text-align: center;
+} 
+
+#wrapper { padding: 2em;
+           background-color: #F5F5F5; 
+} 
+
+header a { text-decoration: none; }
+header a:link { color: #FFF; }
+header a:visited { color: #FFF; }
+headera:hover { color: #EDF5F5; }
+
+.home { height: 20vh;
+        padding-top: 2em; padding-left: 10%;
+}
+.content { height: 20vh;
+        padding-top: 2em; padding-left: 10%;
+}
+#mathero { background-image: url(images/p5.jpg);
+           background-repeat: no-repeat;
+           height: 300px;
+           background-size: cover;
+           display: none;
+}
+#loungehero { background-image: url(images/yogalounge.jpg);
+              background-repeat: no-repeat;
+              height: 300px;
+              background-size: cover;
+              display: none;
+}
+section { padding-left: .5em;
+          padding-right: .5em;
+}
+#mobile { display: inline;
+}
+#desktop { display: none;
+}
+/* Configure a Medium Layout*/
+@media (min-width: 600px)
+{
+  nav ul { display: flex; 
+           flex-flow: row nowrap;
+           justify-content: flex-end; }
+  nav li { width: 7em; }
+  section { padding-left: 2em; padding-right: 2em; }
+  #mathero { display: block; padding-bottom: 1em; }
+  #loungehero { display: block; padding-bottom: 1em; }
+  #flow { display: flex; flex-flow: row; }
+  #mobile { display: none; }
+  #desktop { display: inline; }
+}
+
+/* Configure a Large Layout*/
+@media (min-width: 1024px)
+{
+  header { font-size: 120%; }
+  .home { height: 50vh;
+          padding-top: 5em;
+          padding-left: 8em; }
+  .content { height: 30vh;
+             padding-top: 1em;
+             padding-left: 8em; }
+  #wrapper { width: 80%;
+             margin: auto; }
+}
