@@ -1,0 +1,61 @@
+#Setting the doc type
+!DOCTYPE html>
+#setting up the website language
+<html lang="en">
+#Creating the header
+<head>
+#Inserting the title of the page
+<title>American Business Network::About Us</title>
+<meta charset="utf-8">
+#setting up the device format
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+#Linking external css
+<link href="ABS.css" rel="stylesheet">
+</head>
+<body>
+#Creating the header class
+  <header class="content">
+    <h1 style="text-align:center; margin-top:120px;"><a href="index.html">American Business Network</a></h1>
+  </header>
+  <nav>
+     <ul>
+     <li><a href="index.html">Home</a></li> 
+     <li><a href="about-us.html">About Us</a></li> 
+     <li><a href="events.html">Events</a></li> 
+     <li><a href="contact.html">Contact</a></li>
+    </ul> 
+   </nav>
+  #Applying the wrapper to the main
+<div id="wrapper">
+ #Creating the main
+ <main>
+    <h2>About American Business Network</h2>
+        <div id="flow">
+        <section>
+        <h3>Mission Statement</h3>
+          <p>To empower American businesses & professionals by providing resources, 
+		     advocacy, support, and networking opportunities that foster growth. 
+			 Our priority is to elevate our communities and contribute to the economy 
+			 through inclusive and collaborative initiatives.</p></section>
+      #Applying sections
+  <section>
+        <h3>Who We Are</h3>
+          <p>American Business Network (ABN) is a professional network dedicated 
+		     to empowering small to midsized businesses in Southern California. We connect 
+			 business owners and professionals with resources, tools, and programs to help 
+			 them succeed. ABN is committed to fostering a thriving business community 
+			 through networking events, mixers, and annual gatherings.</p></section>
+         
+          </div>
+    <div id="mathero">
+      
+    </div>
+  </main>
+ #creating the header
+ <footer>
+    Copyright &copy; 2025 American Business Network<br>
+    
+  </footer>
+</div>
+</body>
+</html>
