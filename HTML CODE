@@ -1,0 +1,62 @@
+#Setting document type
+<!DOCTYPE html>
+<html lang="en">
+#Creating the title 
+<head>
+<title>American Business Network</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+#Applying the css external sheet
+<link href="ABS.css" rel="stylesheet">
+</head>
+<body>
+#Setting up the navigation
+  <header class="home">
+    <h1 style="text-align:center; margin-top:140px;"><a href="index.html">American Business Network</a></h1>
+  </header>
+  <nav>
+   <ul>
+     <li><a href="index.html">Home</a></li> 
+     <li><a href="AboutUS.html">About Us</a></li> 
+     <li><a href="events.html">Events</a></li> 
+     <li><a href="contact.html">Contact</a></li>
+    </ul> 
+   </nav>
+  #Adding the css wrapper 
+<div id="wrapper">
+ # Creating the main 
+ <main>
+    #Applying the mission statement 
+    <h2>Mission Statement </h2>
+    <p>To empower <span class="studio">American</span> businesses & 
+	   professionals by providing resources, advocacy, support, and networking opportunities 
+	   that foster growth. Our priority is to elevate our communities and contribute to the 
+	   economy through inclusive and collaborative initiatives. 
+	   <span class="studio"></span></p>
+    <ul>
+      <li>Expand Your Business Connections.</li>
+      <li>Join us at our upcoming events to engage with a vibrant network of professionals
+     	  and business owners.</li>
+      <li>Our events provide a unique platform to expand your professional network.</li>
+      <li>By attending, you'll have the chance to forge meaningful connections,<br> 
+	      gain industry knowledge, and contribute to the growth and success of our community.</li>
+    </ul>
+    #Clearing the div format
+<div class="clear">
+  #Creating the container
+<span class="studio">American Business Network</span><br>
+      612 Serenity Way<br>
+      El Dorado, CA 96162<br>
+      <a id="mobile" href="tel:888-555-5555">888-555-5555</a><br><br>
+      <span id="desktop">888-555-5555</span><br><br>
+    </div>
+  </main>
+#Closing the main html
+  #Creating the footer
+<footer>
+    Copyright &copy; 2025 American Business Network<br>
+    
+  </footer>
+</div>
+</body>
+</html>
