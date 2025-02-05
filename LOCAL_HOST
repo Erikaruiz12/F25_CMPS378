@@ -1,0 +1,63 @@
+#Install apache2
+vboxuser@Ubuntu:~$ sudo apt update
+vboxuser@Ubuntu:~$ sudo apt install apache2 -y
+#Enabling apache2 and checking the status
+vboxuser@Ubuntu:~$ sudo systemctl start apache2
+vboxuser@Ubuntu:~$ sudo systemctl enable apache2
+vboxuser@Ubuntu:~$ sudo systemctl status apache2
+#Inserting the html and css code into their respective files
+vboxuser@Ubuntu:~$ sudo nano index.html
+vboxuser@Ubuntu:~$ sudo nano AboutUS.html
+vboxuser@Ubuntu:~$ sudo nano ABS.css
+#Changing the ownership of the directory
+vboxuser@Ubuntu:~$ sudo chmod -R 755 /var/www/html
+vboxuser@Ubuntu:~$ sudo chown -R www-data:www-data /var/www/html
+#Restarting Apache2
+vboxuser@Ubuntu:~$ sudo systemctl restart apache2
+#Changes the website to our website name
+vboxuser@Ubuntu:~$ sudo nano /etc/apache2/sites-available/AmericanBusNetwork.conf
+vboxuser@Ubuntu:~$ sudo systemctl reload apache2
+#Adding the website name to the hosts
+vboxuser@Ubuntu:~$ sudo nano /etc/hosts
+#Type 127.0.0.1 AmericanBusNetwork.local
+#Switching Directories
+vboxuser@Ubuntu:~$ cd /var/www/html
+#Creates the image directory
+vboxuser@Ubuntu:~$: /var/www/html$ sudo mkdir images
+ #Copying the images one by one into the directory
+vboxuser@Ubuntu:~$: sudo cp /home/vboxuser/Downloads/download1.jpeg /var/www/html/images (repeat for all images)
+#Changes the ownership of the images to allow display
+vboxuser@Ubuntu:~$ sudo chmod 755 /var/www/html/images
+vboxuser@Ubuntu:~$ sudo chown vboxuser:www-data /var/www/html/images
+#Restart Apache2 again
+vboxuser@Ubuntu:~$ sudo systemctl restart apache2
+#Installing a Apache SSL certificate 
+boxuser@Ubuntu:~$ sudo a2enmod ssl
+vboxuser@Ubuntu:~$ sudo systemctl restart apache2
+#Creates the self made SSL certificate 
+vboxuser@Ubuntu:~$sudo openssl req -x509 -nodes -days 654 -newkey rsa:2048 \
+> -keyout /etc/ssl/private/apache-selfsigned.key
+> -out /etc/ssl/certs/apache-selfsigned.crt
+#Information will be asked to place into the certificate
+#Creating the virtual host
+vboxuser@Ubuntu:~$ sudo nano /etc/apache2/sites-available/default-ssl.conf
+ <VirtualHost *:443> 
+ServerAdmin webmaster@localhost 
+ServerName localhost
+ DocumentRoot /var/www/html 
+SSLEngine on 
+SSLCertificateFile /etc/ssl/certs/apache-selfsigned.crt 
+SSLCertificateKeyFile /etc/ssl/private/apache-selfsigned.key
+ <Directory /var/www/html>
+ AllowOverride All
+ </Directory>
+ ErrorLog ${APACHE_LOG_DIR}/error.log 
+CustomLog ${APACHE_LOG_DIR}/access.log combined
+ </VirtualHost>
+vboxuser@Ubuntu:~$ sudo systemctl reload apache2
+vboxuser@Ubuntu:~$ sudo a2ensite default-ssl
+#Since it is a self certificate,a warning will be issued
+#Fixes the warning 
+vboxuser@Ubuntu:~$ sudo cp server.crt
+/usr/local/share/ca-certificates/extra/
+vboxuser@Ubuntu:~$ sudo update-ca-certificates
