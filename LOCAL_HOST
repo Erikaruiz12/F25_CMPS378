@@ -1,3 +1,6 @@
+#Intro To Linux Project
+#Erika Ruiz, Dalal Alshun, Katelyn Teixeira
+
 #Install apache2
 vboxuser@Ubuntu:~$ sudo apt update
 vboxuser@Ubuntu:~$ sudo apt install apache2 -y
